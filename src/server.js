@@ -6,7 +6,18 @@ const app = require("./index");
 
 const user = require("./models/User.model");
 
-const todo = require("./models/Todo.model") 
+const todo = require("./models/Todo.model");
+
+app.get("/users",login,(req,res)=>{
+    
+    return res.send({route:"users"});
+});
+
+function login(req,res,next){
+    console.log("before logged in route handler");
+    next();
+    console.log("after logged in route handler");
+}
 
 // create POST request that the user can register 
 
