@@ -8,10 +8,28 @@ const user = require("./models/User.model");
 
 const todo = require("./models/Todo.model");
 
-app.get("/users",login,(req,res)=>{
+app.get("/todos",login,(req,res)=>{
     
-    return res.send({route:"users"});
+    return res.send({route:"users todos"});
 });
+
+app.post("/register",login,(req,res)=>{
+    
+    return res.send({route:"usersregistration"});
+});
+
+app.post("/login",login,(req,res)=>{
+    
+    return res.send({route:"users login"});
+});
+
+
+app.post("/todos",login,(req,res)=>{
+    
+    return res.send({route:"users create todo"});
+});
+
+
 
 function login(req,res,next){
     console.log("before logged in route handler");
